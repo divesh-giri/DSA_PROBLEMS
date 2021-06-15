@@ -45,5 +45,6 @@ class MissingNumber{
         Scanner sc = new Scanner(System.in);
         int[] nums = {0,1,4,5,2};
         System.out.println(missingNumber(nums));
+        sc.close();
     }
 }
