@@ -1,3 +1,5 @@
+package Recursion.Day_1;
+
 public class IsSortedArray
 {
     public static boolean isArraySorted(int []arr,int n,int m)

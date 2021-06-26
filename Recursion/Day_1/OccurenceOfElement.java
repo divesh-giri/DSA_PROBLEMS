@@ -1,3 +1,5 @@
+package Recursion.Day_1;
+
 public class OccurenceOfElement {
     public static int elementOccurence(int []arr, int target, int count, int n)
     {

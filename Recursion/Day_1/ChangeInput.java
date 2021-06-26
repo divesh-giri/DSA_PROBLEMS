@@ -1,3 +1,5 @@
+package Recursion.Day_1;
+
 public class ChangeInput {
     public static char[] changeInput(String str, char[] ch, int n, int m)
     {
