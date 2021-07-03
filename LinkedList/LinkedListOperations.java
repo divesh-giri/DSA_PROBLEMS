@@ -2,6 +2,7 @@ package LinkedList;
 
 import java.util.Scanner;
 
+
 /*
 class Node{
     int data;
@@ -187,12 +188,28 @@ class LinkedListOperation<T>{
         }
         System.out.println("Data not found in Linked List");
     }
-    void midElement()
+    // void midElement()
+    // {
+    //     if(start == null)
+    //     {
+    //         System.out.println("Linked List Empty");
+    //         return;
+    //     }
+    //     Node<T> slow = start;
+    //     Node<T> fast = start;
+    //     while(fast!=null && fast.next!=null)
+    //     {
+    //         slow = slow.next;
+    //         fast = fast.next.next;
+    //     }
+    //     System.out.println("MID Data:"+slow.data);
+    // }
+    Node<T> midElement()
     {
         if(start == null)
         {
             System.out.println("Linked List Empty");
-            return;
+            return null;
         }
         Node<T> slow = start;
         Node<T> fast = start;
@@ -202,14 +219,15 @@ class LinkedListOperation<T>{
             fast = fast.next.next;
         }
         System.out.println("MID Data:"+slow.data);
+        return slow;
     }
 
-    void KthElementFromEnd(int k)
+    Node<T> KthElementFromEnd(int k)
     {
         if(start == null)
         {
             System.out.println("Linked List Empty");
-            return;
+            return null;
         }
         Node<T> i = start;
         Node<T> j = start;
@@ -224,9 +242,192 @@ class LinkedListOperation<T>{
             j = j.next;
         }
         System.out.println(i.data);
+        return i;
 
     }
 
+    void removeKthFromEnd(int k)
+    {
+        Node<T> kNode = KthElementFromEnd(k);
+        Node<T> temp = start;
+        while(temp.next != kNode)
+        {
+            temp = temp.next;
+        }
+        temp.next = kNode.next;
+        kNode = null;
+    }
+
+    void detectLoopAndRemove()
+    {
+        Node<T> fast = start;
+        Node<T> slow = start;
+        if(fast == null)
+        {
+            System.out.println("Linked list empty");
+            return;
+        }
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast)
+            {
+                // Node<T> temp = start;
+                // Node<T> curr = slow;
+                // while(true)
+                // {
+                //     curr = slow;
+                //     while(curr.next != slow && curr.next != temp)
+                //     {
+                //         curr = curr.next;
+                //     }
+                //     if(curr.next == temp)
+                //     {
+                //         curr.next = null;
+                //         return;
+                //     }
+                //     temp = temp.next;
+                // }
+                removeLoop(slow);
+
+            }
+        }
+        System.out.println("No Loop Detected.");
+
+
+    }
+
+    void removeLoop(Node<T> p1)
+    {
+        Node<T> p2 = p1;
+        int k=1;
+        while(p2.next != p1)
+        {
+            k++;
+            p2 = p2.next;
+        }
+        p1 = start;
+        p2 = start;
+        while(k>0)
+        {
+            p2 = p2.next;
+        }
+        while(p1 != p2)
+        {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        while(p2.next != p1)
+        {
+            p2 = p2.next;
+        }
+        p2.next = null;
+    }
+
+    int size()
+    {
+        int count = 0;
+        Node<T> temp = start;
+        while(temp != null)
+        {
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+
+    Node<T> get(int index)
+    {
+        int size = size();
+        if(size == 0)
+        {
+            throw new RuntimeException("LL is empty");
+        }
+        if(index<0 || index>=size())
+        {
+            throw new RuntimeException("Index Out of BOund");
+        }
+        Node<T> temp = start;
+        while(index>0)
+        {
+            temp = temp.next;
+            index--;
+        }
+        return temp;
+    }
+    void reverseByData()
+    {
+        int size = size();
+        int left = 0;
+        int right = size -1;
+        while(left<right)
+        {
+            Node<T> leftNode = get(left);
+            Node<T> rightNode = get(right);
+            T temp = leftNode.data;
+            leftNode.data = rightNode.data;
+            rightNode.data = temp;
+            left++;
+            right--;
+        }
+    }
+
+    void reverseNodes()
+    {
+        Node<T> previous = start;
+        Node<T> current = previous.next;
+        previous.next = null;
+        while(current != null)
+        {
+            Node<T> ahead = current.next;
+            current.next = previous;
+            previous = current;
+            current = ahead;
+        }
+        start = previous;
+    }
+
+    int size(Node<T> st)
+    {
+        int count = 0;
+        while(st != null)
+        {
+            st = st.next;
+            count++;
+        }
+        return count;
+    }
+
+    Node<T> intersectionOfTwoNode(Node<T> start1, Node<T> start2)
+    {
+        int s1 = size(start1);
+        int s2 = size(start2);
+        int diff = Math.abs(s1-s2);
+        if(s1>s2)
+        {
+            while(diff>0)
+            {
+                start1 = start1.next;
+                diff--;
+            }
+        }
+        else
+        {
+            while(diff>0)
+            {
+                start2 = start2.next;
+            }
+        }
+        while(start1 != start2)
+        {
+            start1 = start1.next;
+            start2 = start2.next;
+        }
+        return start1;
+    }
+
+    
     void print()
     {
         if(start == null){
@@ -260,7 +461,9 @@ public class LinkedListOperations {
             System.out.println("09. Print");
             System.out.println("10. Middle element of the linked list");
             System.out.println("11. Kth Element from end");
-            System.out.println("12. Exit");
+            System.out.println("12. Reverse Linked List by Node");
+            System.out.println("13. Reverse Linked List by Data");
+            System.out.println("14. Exit");
             int ch = sc.nextInt();
             int data,pos;
             Node<Integer> node;
@@ -316,7 +519,10 @@ public class LinkedListOperations {
                          int k = sc.nextInt();
                          list.KthElementFromEnd(k);
                          break;
-
+                case 12: list.reverseNodes();
+                         break;
+                case 13: list.reverseByData();
+                         break;
                 default:
                         break outer;
             }

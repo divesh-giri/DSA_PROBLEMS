@@ -1,0 +1,161 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Permutation",
+            "request": "launch",
+            "mainClass": "Backtracking.Day_1.Permutation",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch LongestCommonSubsequence",
+            "request": "launch",
+            "mainClass": "DynamicProgramming.Day_2.LongestCommonSubsequence",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch LinkedListOperations",
+            "request": "launch",
+            "mainClass": "LinkedList.LinkedListOperations",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ChangeInput",
+            "request": "launch",
+            "mainClass": "Recursion.Day_1.ChangeInput",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch FindElement",
+            "request": "launch",
+            "mainClass": "Recursion.Day_1.FindElement",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch IsSortedArray",
+            "request": "launch",
+            "mainClass": "Recursion.Day_1.IsSortedArray",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch OccurenceOfElement",
+            "request": "launch",
+            "mainClass": "Recursion.Day_1.OccurenceOfElement",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pattern1",
+            "request": "launch",
+            "mainClass": "Recursion.Day_1.Pattern.Pattern1",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch PiValue",
+            "request": "launch",
+            "mainClass": "Recursion.Day_1.PiValue",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch DiceGame",
+            "request": "launch",
+            "mainClass": "Recursion.Day_2.DiceGame",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch PermutationOfString",
+            "request": "launch",
+            "mainClass": "Recursion.Day_2.PermutationOfString",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATOI",
+            "request": "launch",
+            "mainClass": "Recursion.Day_3.ATOI",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch CapitalCloneArray",
+            "request": "launch",
+            "mainClass": "Recursion.Day_3.CapitalCloneArray",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Maze",
+            "request": "launch",
+            "mainClass": "Recursion.Day_3.Maze",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch PalindromString",
+            "request": "launch",
+            "mainClass": "Recursion.Day_3.PalindromString",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductOfArray",
+            "request": "launch",
+            "mainClass": "Recursion.Day_3.ProductOfArray",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch CoinChange",
+            "request": "launch",
+            "mainClass": "Recursion.Day_4.CoinChange",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch PermutationString",
+            "request": "launch",
+            "mainClass": "Recursion.Day_4.PermutationString",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch StairClimb",
+            "request": "launch",
+            "mainClass": "Recursion.Day_4.StairClimb",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Subsequence",
+            "request": "launch",
+            "mainClass": "Recursion.Day_4.Subsequence",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        },
+        {
+            "type": "java",
+            "name": "Launch NQueen",
+            "request": "launch",
+            "mainClass": "Recursion.Day_5.NQueen",
+            "projectName": "DSA_PROBLEMS_250969d5"
+        }
+    ]
+}
